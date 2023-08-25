@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#slate {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: black;
+    width: 100dvw;
+    height: 100dvh;
+}
+
+#intro {
+    position: absolute;
+    top: 50dvh;
+    width: 100dvw;
+    text-align: center;
+    color: white;
+}
+
+#randomizeContainer {
+    position: absolute;
+    padding: .5em;
+}
+#randomize {
+    background-color: skyblue;
+    padding: .5em;
+}
+#replay {
+    position: absolute;
+    background-color: skyblue;
+    padding: .5em;
+}
