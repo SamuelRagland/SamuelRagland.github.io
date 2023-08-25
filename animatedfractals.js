@@ -101,12 +101,12 @@ function randomizeFractal() {
 function animateFractal() {
     if (timer <= 1000) {
         spread += .01;
-        size += .1;
+        size += .075;
         color = 'hsl(' + timer * .1 + ',100%,50%)';
     }
     else {
         spread -= .01;
-        size -= .1;
+        size -= .075;
         color = 'hsl(' + timer * .1 + ',100%,50%)';
     }
     timer++;
@@ -125,7 +125,7 @@ replay.addEventListener('click', function() {
     }
     else {
         spread += (-1000 * .01) + ((timer % 1000) * .01);
-        size += (-1000 * .1) + ((timer % 1000) * .1);
+        size += (-1000 * .075) + ((timer % 1000) * .075);
     };
     int = setInterval(animateFractal, 25);
     timer = 0;
