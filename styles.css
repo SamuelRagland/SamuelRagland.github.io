@@ -25,12 +25,8 @@
     position: absolute;
     padding: .5em;
 }
-#randomize {
+#randomize, #replay {
     background-color: skyblue;
     padding: .5em;
-}
-#replay {
-    position: absolute;
-    background-color: skyblue;
-    padding: .5em;
+    font-size: 2em;
 }
