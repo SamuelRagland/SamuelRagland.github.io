@@ -1,15 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --clr-primary: #3FB3E0;
+    --clr-font: #4699FC;
+    --clr-neutral: #3FE0B6;
+    --clr-neutral-accent: #46FC98;
+    --clr-neutral-light: #52F5F7;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    transition: 1s;
+}
+
+#logo {
+    aspect-ratio: 1/1;
+    width: 5rem;
+}
+
+#wrapper {
+    background-color: var(--clr-primary);
+    font-family: 'Quicksand', sans-serif;
+}
+
+
+p {
+    font-size: 1.25rem;
+}
+.content {
+    box-shadow: 0 0 .5em var(--clr-neutral-accent);
+    padding: 0;
+    border-radius: .5rem;
+    margin-block: 1rem;
+}
+.content:hover {
+    box-shadow: none;
+}
+.content > p {
+    background-color: var(--clr-font);
+    padding: 1rem;
+    color: whitesmoke;
+    line-height: 1.5;
+}
+.content > p:first-of-type {
+    border-radius: .5rem .5rem 0 0;
+}
+.content > p:last-of-type {
+    border-radius: 0 0 .5rem .5rem;
+}
+.content > p:hover {
+    border-radius: .5rem;
+    margin-block: 1rem;
+    box-shadow: 0 0 .5em var(--clr-neutral-accent);
+}
+
+#nav-list {
+    list-style: none;
+}
+#nav-list > li > a {
+    text-decoration: none;
+    color: var(--clr-font);
+    font-weight: 600;
 }
 
 @media (min-width: 600px) {
     #wrapper {
-        background-color: red;
+        padding-inline: 10dvh;
+    }
+    main > * {
+        padding-block: 1rem;
+    }
+    header {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    nav {
+        width: fit-content;
+    }
+    #nav-list {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+    }
+    #nav-list > li > a {
+        border-radius: .5rem;
+        padding: 1rem 1.5rem;
+        background-color: var(--clr-neutral-accent);
+        box-shadow: .25rem .25rem 0rem 0rem var(--clr-neutral);
+        transition: 1s;
+    }
+    #nav-list > li {
+        transition: 1s;
+    }
+    #nav-list > li:hover {
+        transform: translate(.25rem, .25rem);
+    }
+    #nav-list > li > a:hover {
+        background-color: #52F5F7;
+        box-shadow: 0rem 0rem 0rem 0rem var(--clr-neutral);
     }
 }
 
+@media (min-width: 750px) {
+    #wrapper {
+        padding-inline: 20dvh;
+    }
+}
 
 /* HOME PAGE */
 
@@ -37,7 +137,7 @@
     padding: .5em;
 }
 #randomize, #replay {
-    background-color: skyblue;
+    background-color: var(--clr-primary);
     padding: .5em;
     font-size: 2em;
 }
