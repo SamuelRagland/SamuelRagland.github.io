@@ -10,9 +10,9 @@ ctx.strokeStyle = 'yellow';
 ctx.lineWidth = 15;
 ctx.lineCap = 'round';
 ctx.shadowColor = 'rgba(0,0,0,.7)';
-ctx.shadowOffsetX = 10;
-ctx.shadowOffsetY = 5;
-ctx.shadowBlur = 10;
+ctx.shadowOffsetX = 5;
+ctx.shadowOffsetY = 2.5;
+ctx.shadowBlur = 5;
 
 // Variables
 
@@ -33,6 +33,7 @@ let timer = 0;
 function drawBranch(level) {
     if (level > maxLevel) return;
     ctx.beginPath();
+    ctx.lineCap = 'round';
     ctx.moveTo(0, size);
     ctx.bezierCurveTo(0, size * spread + 100, size * 3, size * scale, size * spread, 0);
     ctx.stroke();
@@ -137,10 +138,10 @@ window.addEventListener('resize', function(){
     canvas.width = this.window.innerWidth;
     canvas.height = this.window.innerHeight;
     size = canvas.width < canvas.height ? canvas.width * .1 : canvas.height * .1;
-    ctx.shadowColor = 'rgba(0,0,0,.7)';
-    ctx.shadowOffsetX = 10;
-    ctx.shadowOffsetY = 5;
-    ctx.shadowBlur = 10;
+    ctx.shadowColor = 'rgba(0,0,0,.5)';
+    ctx.shadowOffsetX = 5;
+    ctx.shadowOffsetY = 2.5;
+    ctx.shadowBlur = 5;
     drawFractal();
 })
 
