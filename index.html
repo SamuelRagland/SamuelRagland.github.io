@@ -17,6 +17,42 @@
             }
 
         $("document").ready(function() {
+
+            $("#linkedIn-show").animate({
+                opacity: 'hide',
+                height: 'hide'
+                }, '0');
+
+            $("#linkedIn-hide").click(function() {
+                $('#linked-in').animate({ 
+                opacity: 'hide',
+                height: 'hide'
+                }, '0');
+                $('#linkedIn-hide').animate({ 
+                opacity: 'hide',
+                height: 'hide'
+                }, '0');
+                $('#linkedIn-show').animate({ 
+                opacity: 'show',
+                height: 'show'
+                }, '0');
+            });
+            $("#linkedIn-show").click(function() {
+                $('#linked-in').animate({ 
+                opacity: 'show',
+                height: 'show'
+                }, '0');
+                $('#linkedIn-hide').animate({ 
+                opacity: 'show',
+                height: 'show'
+                }, '0');
+                $('#linkedIn-show').animate({ 
+                opacity: 'hide',
+                height: 'hide'
+                }, '0');
+            });
+
+
             letterRotate();
             let checkboxes = document.querySelectorAll('input[type="checkbox"]');
             let checkSelected = e => {
@@ -95,8 +131,13 @@
                 <p id="history">I am a Kansas City Native and have only lived in another city for roughly two years of my life. I got into coding through an engineering class that had a lesson where you would work on coding solutions on a python-esque language.</p>
                 <p id="education">I graduated from Shawnee Mission East in 2018 with a Presidential Scholars Award. From there I went into engineering at Missouri State University and spent a year and a half there before realising I enjoyed coding. After talking to friends about their fields in coding I decided to pursue a degree in Web Development from JCCC. This is my final semester there before I will receive my AAS in Web Development and Digital Media</p>
                 <p id="hobbies">When I'm not coding I like to be active and be creative. The main outlets I partake in for this expression would in the form of soccer and art. Soccer has been my favorite sport ever since I can remember and I stay involved by playing in pick-up leagues or just practicing. Origami is an ancient style of art that I love to relax with because of how calming and satisfying the process is. Graphic design also tends to eat up a fair amount of my free time, this is because of the immense level of detail that I can develop in a work.</p>
-                <p>Farming is so fun</p>
             </div>
+            <div class="socials">
+                <button id="linkedIn-hide">Hide</button>
+                <button id="linkedIn-show">Show</button>
+                <h3 id="linked-in"><a href="https://www.linkedin.com/in/samuelragland/">My LinkedIn Page</a></h3>
+            </div>
+            
         </main>
         <footer>
             <h2>Cheese</h2>
