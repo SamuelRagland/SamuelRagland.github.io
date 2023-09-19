@@ -57,8 +57,9 @@ button:hover {
     min-width: 25rem;
     max-width: 80dvw;
     border-radius: .5rem;
+    overflow: hidden;
 }
-#nam etag > div {
+#name {
     background-color: var(--clr-neutral-accent);
     width: calc(100% + 6rem);
     translate: -3rem;
@@ -85,6 +86,7 @@ button:hover {
 #nametag > svg:hover {
     animation: spin 2s linear running infinite;
 }
+
 @keyframes spin {
     0% {
         transform: rotate(0deg);
@@ -197,8 +199,13 @@ form > label:hover {
         box-shadow: 0rem 0rem 0rem 0rem var(--clr-neutral);
     }
     
-    #linked-in > p > a {
+    #linked-in > a {
         font-size: 1.5rem;
+        border-radius: .5rem;
+        padding: 1rem;
+        background-color: var(--clr-font);
+        box-shadow: .25rem .25rem 0rem 0rem var(--clr-neutral);
+        color: white;
     }
 
     .socials {

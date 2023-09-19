@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <title>Portfolio</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="./jquery-ui-1.13.2/jquery-ui.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-
+    <script src="./jquery-ui-1.13.2/jquery-ui.js"></script>
     <script type="text/javascript">
 
             function letterRotate() {
@@ -18,38 +19,29 @@
 
         $("document").ready(function() {
 
+            $('#nametag').resizable()
+            $('#nametag').css('transition', '0s')
+
             $("#linkedIn-show").animate({
-                opacity: 'hide',
-                height: 'hide'
+                opacity: 'hide'
                 }, '0');
 
             $("#linkedIn-hide").click(function() {
-                $('#linked-in').animate({ 
-                opacity: 'hide',
-                height: 'hide'
-                }, '0');
-                $('#linkedIn-hide').animate({ 
-                opacity: 'hide',
-                height: 'hide'
-                }, '0');
-                $('#linkedIn-show').animate({ 
-                opacity: 'show',
-                height: 'show'
-                }, '0');
+                $('#linkedIn-show').css('display', 'block');
+                $(this).css('display', 'none');
+                
+                $('#linked-in>a').animate({ 
+                fontSize: '0px',
+                padding: '0px',
+                }, '2000');
             });
             $("#linkedIn-show").click(function() {
-                $('#linked-in').animate({ 
-                opacity: 'show',
-                height: 'show'
-                }, '0');
-                $('#linkedIn-hide').animate({ 
-                opacity: 'show',
-                height: 'show'
-                }, '0');
-                $('#linkedIn-show').animate({ 
-                opacity: 'hide',
-                height: 'hide'
-                }, '0');
+                $(this).css('display', 'none');
+                $('#linkedIn-hide').css('display', 'block');
+                $('#linked-in>a').animate({ 
+                padding: '1rem',
+                fontSize: '1.5rem'
+                }, '2000');
             });
 
 
@@ -93,7 +85,7 @@
         </header>
         <main>
             <div id="nametag">
-                <div>
+                <div id="name">
                     <h1>Hello</h1>
                     <h1>My name is:</h1>
                 </div>
@@ -130,7 +122,7 @@
             <div class="content">
                 <p id="history">I am a Kansas City Native and have only lived in another city for roughly two years of my life. I got into coding through an engineering class that had a lesson where you would work on coding solutions on a python-esque language.</p>
                 <p id="education">I graduated from Shawnee Mission East in 2018 with a Presidential Scholars Award. From there I went into engineering at Missouri State University and spent a year and a half there before realising I enjoyed coding. After talking to friends about their fields in coding I decided to pursue a degree in Web Development from JCCC. This is my final semester there before I will receive my AAS in Web Development and Digital Media</p>
-                <p id="hobbies">When I'm not coding I like to be active and be creative. The main outlets I partake in for this expression would in the form of soccer and art. Soccer has been my favorite sport ever since I can remember and I stay involved by playing in pick-up leagues or just practicing. Origami is an ancient style of art that I love to relax with because of how calming and satisfying the process is. Graphic design also tends to eat up a fair amount of my free time, this is because of the immense level of detail that I can develop in a work.</p>
+                <p id="hobbies">When I'm not coding I like to be active and creative. The main outlets I partake in for this expression would be in the form of soccer and art. Soccer has been my favorite sport ever since I can remember and I stay involved by playing in pick-up leagues or just practicing. Origami is an ancient style of art that I love to relax with because of how calming and satisfying the process is. Graphic design also tends to eat up a fair amount of my free time, this is because of the immense level of detail that I can develop in a work.</p>
             </div>
             <div class="socials">
                 <button id="linkedIn-hide">Hide</button>
