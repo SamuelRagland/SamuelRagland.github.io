@@ -32,6 +32,9 @@ button {
     background-color: var(--clr-neutral-accent);
     box-shadow: .25rem .25rem 0rem 0rem var(--clr-neutral);
     cursor: pointer;
+    color: var(--clr-font);
+    font-weight: 700;
+    font-size: 1em;
 }
 
 button:hover {
@@ -47,16 +50,57 @@ button:hover {
     padding-inline: 5dvw;
 }
 
-#nametag {
-    padding: 0rem 3rem 2rem;
+#hero {
+    display: block;
+}
+
+#hero-left > form {
+    padding-block-start: 2em;
+}
+
+#hero-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1em 2em;
+    text-align: center;
+    margin-top: 2em;
+}
+
+#img-slider {
+    width: 100%;
+    padding: .5em;
+    height: 10em;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid var(--clr-neutral-accent);
+}
+
+#img-slider > img {
+    width: 10em;
+    padding-inline: 1em;
+}
+#img-slider button {
+    font-size: 1.5em;
+    padding: .25em .5em;
+}
+
+.bg {
     background-color: white;
     box-shadow: .25rem .25rem 0rem 0rem var(--clr-neutral);
     color: var(--clr-font);
-    text-align: center;
-    margin-block-start: 2rem;
-    min-width: 25rem;
-    max-width: 80dvw;
     border-radius: .5rem;
+}
+
+#nametag {
+    padding: 0rem 3rem 2rem;
+    text-align: center;
+    min-width: 25rem;
+    max-width: 50dvw;
+    min-height: 16em;
+    max-height: 30em;
     overflow: hidden;
 }
 #name {
@@ -129,7 +173,9 @@ p {
 
 #nav-list {
     list-style: none;
+    gap: 1em;
 }
+
 #nav-list > li > a {
     text-decoration: none;
     color: var(--clr-font);
@@ -246,11 +292,22 @@ form > label:hover {
 }
 
 @media screen and (min-width: 1000px){
-    #wrapper {
-        padding-inline:20dvw calc(20dvw - 10px);
-    }
     #nametag, form {
         width: 30dvw;
+    }
+    #hero {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2em;
+    }
+    #hero-right {
+        margin-top: 0;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    #wrapper {
+        padding-inline:20dvw calc(20dvw - 10px);
     }
 }
 

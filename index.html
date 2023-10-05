@@ -19,6 +19,32 @@
 
         $("document").ready(function() {
 
+            //IMG SLIDER
+            $('#slider-one').hide()
+            $('#slider-three').hide()
+            let sliderImgs = [$('#slider-one'), $('#slider-two'), $('#slider-three')]
+            let currentImg = 1;
+            let sliderImg = sliderImgs[currentImg];
+
+            $('#slider-left').click(function() {
+                if (currentImg <= 0) {
+                    currentImg = 3;
+                }
+                sliderImg.hide()
+                currentImg -= 1;
+                sliderImg = sliderImgs[currentImg];
+                sliderImg.show()
+            })
+            $('#slider-right').click(function() {
+                if (currentImg >= sliderImgs.length - 1) {
+                    currentImg = -1;
+                }
+                sliderImg.hide()
+                currentImg += 1;
+                sliderImg = sliderImgs[currentImg];
+                sliderImg.show()
+            })
+
             $('#nametag').resizable()
             $('#nametag').css('transition', '0s')
 
@@ -84,41 +110,55 @@
             </nav>
         </header>
         <main>
-            <div id="nametag">
-                <div id="name">
-                    <h1>Hello</h1>
-                    <h1>My name is:</h1>
+            <div id="hero">
+                <div id="hero-left">
+                    <div id="nametag" class="bg">
+                        <div id="name">
+                            <h1>Hello</h1>
+                            <h1>My name is:</h1>
+                        </div>
+                        <svg height='100' width='50' id="s">
+                            <path d="M 10 25 L 30 0 L 50 20 H 50 L 50 40 L 40 50 L 50 60 L 50 80 L 30 100 L 10 80 L 10 60 L 20 50 L 10 40" fill="var(--clr-neutral-accent)"/>
+                            <path d="M 5 20 L 25 0 L 45 20 H 45 L 45 40 L 35 50 L 45 60 L 45 80 L 25 100 L 5 80 L 5 60 L 15 50 L 5 40" fill="var(--clr-font)"/>
+                            <path d='M 25 20 V 20 40 L 36 49' stroke-linecap='round' stroke="var(--clr-neutral-accent)" fill='none' stroke-width="3"/>
+                            <path d='M 25 80 V 80 60 L 15 51' stroke-linecap='round' stroke="var(--clr-neutral-accent)" fill='none' stroke-width="3"/>
+                        </svg>
+                        
+                        <svg height='100' width='50' id="a">
+                            <path d='M30 0 L 10 20 L 10 90 L 20 100 L 30 90 L 40 100 L 50 90 L 50 20' fill="var(--clr-neutral-accent)"/>
+                            <path d='M25 0 L 5 20 L 5 90 L 15 100 L 25 90 L 35 100 L 45 90 L 45 20' fill="var(--clr-font)"/>
+                            <path d='M 25 20 V 20 40' stroke-linecap='round' stroke='var(--clr-neutral-accent)' stroke-width="3"/>
+                            <path d='M 25 50 V 50 91' stroke-linecap='round' stroke="var(--clr-neutral-accent)" stroke-width="3"/>
+                        </svg>
+                        
+                        <svg height='100' width='50' id="m">
+                        <path d='M 10 10 L 20 0 L 30 10 L 40 0 L 50 10 V 15 90 L 40 100 L 30 90 L 20 100 L 10 90' fill="var(--clr-neutral-accent)"/>
+                        <path d='M 5 10 L 15 0 L 25 10 L 35 0 L 45 10 V 10 90 L 35 100 L 25 90 L 15 100 L 5 90' fill="var(--clr-font)"/>
+                        <path d='M 15 20 V 20 40 L 25 50' stroke-linecap='round' stroke='var(--clr-neutral-accent)' stroke-width="3" fill="var(--clr-font)"/>
+                        <path d='M 35 20 V 20 40 L 25 50' stroke-linecap='round' stroke='var(--clr-neutral-accent)' stroke-width="3" fill="var(--clr-font)"/>
+                        <path d='M 25 91 V 50 50' stroke-linecap='round' stroke='var(--clr-neutral-accent)' stroke-width="3" fill="var(--clr-font)"/>
+                        </svg>
+                    </div>
+                    <form>
+                        <label for="historyCheck">History</label>
+                        <input type="checkbox" name="history" id="historyCheck" checked>
+                        <label for="educationCheck">Education</label>
+                        <input type="checkbox" name="education" id="educationCheck" checked>
+                        <label for="hobbiesCheck">Hobbies</label>
+                        <input type="checkbox" name="hobbies" id="hobbiesCheck" checked>
+                    </form>
                 </div>
-                <svg height='100' width='50' id="s">
-                    <path d="M 10 25 L 30 0 L 50 20 H 50 L 50 40 L 40 50 L 50 60 L 50 80 L 30 100 L 10 80 L 10 60 L 20 50 L 10 40" fill="var(--clr-neutral-accent)"/>
-                    <path d="M 5 20 L 25 0 L 45 20 H 45 L 45 40 L 35 50 L 45 60 L 45 80 L 25 100 L 5 80 L 5 60 L 15 50 L 5 40" fill="var(--clr-font)"/>
-                    <path d='M 25 20 V 20 40 L 36 49' stroke-linecap='round' stroke="var(--clr-neutral-accent)" fill='none' stroke-width="3"/>
-                    <path d='M 25 80 V 80 60 L 15 51' stroke-linecap='round' stroke="var(--clr-neutral-accent)" fill='none' stroke-width="3"/>
-                </svg>
-                
-                <svg height='100' width='50' id="a">
-                    <path d='M30 0 L 10 20 L 10 90 L 20 100 L 30 90 L 40 100 L 50 90 L 50 20' fill="var(--clr-neutral-accent)"/>
-                    <path d='M25 0 L 5 20 L 5 90 L 15 100 L 25 90 L 35 100 L 45 90 L 45 20' fill="var(--clr-font)"/>
-                    <path d='M 25 20 V 20 40' stroke-linecap='round' stroke='var(--clr-neutral-accent)' stroke-width="3"/>
-                    <path d='M 25 50 V 50 91' stroke-linecap='round' stroke="var(--clr-neutral-accent)" stroke-width="3"/>
-                </svg>
-                
-                <svg height='100' width='50' id="m">
-                <path d='M 10 10 L 20 0 L 30 10 L 40 0 L 50 10 V 15 90 L 40 100 L 30 90 L 20 100 L 10 90' fill="var(--clr-neutral-accent)"/>
-                <path d='M 5 10 L 15 0 L 25 10 L 35 0 L 45 10 V 10 90 L 35 100 L 25 90 L 15 100 L 5 90' fill="var(--clr-font)"/>
-                <path d='M 15 20 V 20 40 L 25 50' stroke-linecap='round' stroke='var(--clr-neutral-accent)' stroke-width="3" fill="var(--clr-font)"/>
-                <path d='M 35 20 V 20 40 L 25 50' stroke-linecap='round' stroke='var(--clr-neutral-accent)' stroke-width="3" fill="var(--clr-font)"/>
-                <path d='M 25 91 V 50 50' stroke-linecap='round' stroke='var(--clr-neutral-accent)' stroke-width="3" fill="var(--clr-font)"/>
-                </svg>
+                <div id="hero-right" class="bg">
+                            <h1>Cool Images</h1>
+                        <div id="img-slider" class="bg">
+                            <button id="slider-left">&#129092</button>
+                            <img id="slider-one" src="./img/Gold.png" alt="Gold Logo">
+                            <img id="slider-two" src="./img/HeadShot.png" alt="Sam Ragland">
+                            <img id="slider-three" src="./img/hero-bg.png" alt="Cool Art">
+                            <button id="slider-right">&#129094</button>
+                        </div>
+                </div>
             </div>
-            <form>
-                <label for="historyCheck">History</label>
-                <input type="checkbox" name="history" id="historyCheck" checked>
-                <label for="educationCheck">Education</label>
-                <input type="checkbox" name="education" id="educationCheck" checked>
-                <label for="hobbiesCheck">Hobbies</label>
-                <input type="checkbox" name="hobbies" id="hobbiesCheck" checked>
-            </form>
             <div class="content">
                 <p id="history">I am a Kansas City Native and have only lived in another city for roughly two years of my life. I got into coding through an engineering class that had a lesson where you would work on coding solutions on a python-esque language.</p>
                 <p id="education">I graduated from Shawnee Mission East in 2018 with a Presidential Scholars Award. From there I went into engineering at Missouri State University and spent a year and a half there before realising I enjoyed coding. After talking to friends about their fields in coding I decided to pursue a degree in Web Development from JCCC. This is my final semester there before I will receive my AAS in Web Development and Digital Media</p>
