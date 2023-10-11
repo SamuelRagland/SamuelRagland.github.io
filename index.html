@@ -25,23 +25,65 @@
             let sliderImgs = [$('#slider-one'), $('#slider-two'), $('#slider-three')]
             let currentImg = 1;
             let sliderImg = sliderImgs[currentImg];
+            $('#slider-one').animate({ 
+                opacity: '0',
+                width: '0px',
+                paddingInline: '0px'
+                }, '10');
+            $('#slider-three').animate({ 
+                opacity: '0',
+                width: '0px',
+                paddingInline: '0px'
+                }, '10');
 
             $('#slider-left').click(function() {
                 if (currentImg <= 0) {
                     currentImg = 3;
                 }
-                sliderImg.hide()
+                sliderImg.animate({ 
+                opacity: '0',
+                width: '0px',
+                paddingInline: '0px'
+                }, '2000');
+                sliderImg.hide();
                 currentImg -= 1;
                 sliderImg = sliderImgs[currentImg];
+
                 sliderImg.show()
+                sliderImg.animate({ 
+                opacity: '0',
+                width: '0px',
+                paddingInline: '0px'
+                }, '2000');
+                sliderImg.animate({ 
+                opacity: '1',
+                width: '10em',
+                paddingInline: '1em'
+                }, '2000');
             })
             $('#slider-right').click(function() {
                 if (currentImg >= sliderImgs.length - 1) {
                     currentImg = -1;
                 }
-                sliderImg.hide()
+                sliderImg.animate({ 
+                opacity: '0',
+                width: '0px',
+                paddingInline: '0px'
+                }, '2000');
                 currentImg += 1;
                 sliderImg = sliderImgs[currentImg];
+                
+                sliderImg.hide();
+                sliderImg.animate({ 
+                opacity: '0',
+                width: '0px',
+                paddingInline: '0px'
+                }, '2000');
+                sliderImg.animate({ 
+                opacity: '1',
+                width: '10em',
+                paddingInline: '1em'
+                }, '2000');
                 sliderImg.show()
             })
 
