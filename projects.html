@@ -4,6 +4,22 @@
     <meta charset="UTF-8">
     <title>Projects</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script type="text/javascript">
+      $("document").ready(function(){
+        $('#tab-body p:not(:first)').hide()
+
+        $('#tab-header li').click(function(e){
+          e.preventDefault();
+          $('#tab-body p').hide();
+          $('#tab-header .current').removeClass('current');
+          $(this).addClass('current');
+
+          var clicked = $(this).find('a:first').attr('href');
+          $('#tab-body ' + clicked).fadeIn();
+        }).eq(0).addClass('current');
+      })
+    </script>
 </head>
 <body>
   <div id="wrapper">
@@ -19,11 +35,16 @@
           </ul>
       </nav>
   </header>
-    <ul>
-      <li><a href='animatedfractals.html'>Animated Fractals</a></li>
-      <li></li>
-      <li></li>
+    <ul id="tab-header">
+      <li class="current"><a href='#animated-fractals'>Animated Fractals</a></li>
+      <li><a href="#threeD-css">3D CSS</a></li>
+      <li><a href="#js">Javascript</a></li>
     </ul>
+    <div id="tab-body">
+      <p id="animated-fractals">A visual demonstration of how fractals work using HTML Canvas and javascript.<a href='animatedfractals.html'>Animated Fractals</a></p>
+      <p id="threeD-css">A dive into 3D CSS</p>
+      <p id="js">Cool project using javascript</p>
+    </div>
   </div>
 </body>
 </html>

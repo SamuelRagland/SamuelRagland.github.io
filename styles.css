@@ -318,6 +318,36 @@ form > label:hover {
 }
 
 
+/* PROJECTS PAGE */
+
+#tab-header {
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+}
+#tab-header > li {
+    background-color: var(--clr-primary);
+    padding: 1em;
+    border-radius: .5em .5em 0 0;
+    transition: 0ms;
+}
+#tab-header li a {
+    text-decoration: none;
+    color: white;
+    transition: 0ms;
+}
+
+#tab-body {
+    padding: 1em;
+    background-color: var(--clr-neutral);
+    color: white;
+}
+
+.current {
+    background-color: var(--clr-neutral) !important;
+    font-weight: bold;
+}
+
 /* ANIMATED FRACTALS PAGE */
 
 #slate {
