@@ -48,6 +48,7 @@ button:hover {
     linear-gradient(90deg, var(--background2) 10dvw, var(--background1) 10dvw, var(--background1) 20dvw, var(--background2) 20dvw, var(--background2) 30dvw, var(--background1) 30dvw, var(--background1) 40dvw, var(--background2) 40dvw, var(--background2) 50dvw, var(--background1) 50dvw, var(--background1) 60dvw, var(--background2) 60dvw, var(--background2) 70dvw, var(--background1) 70dvw, var(--background1) 80dvw, var(--background2) 80dvw, var(--background2) 90dvw, var(--background1) 90dvw, var(--background1) 100dvw);
     font-family: 'Quicksand', sans-serif;
     padding-inline: 5dvw;
+    min-height: 100dvh;
 }
 
 #hero {
@@ -317,8 +318,9 @@ form > label:hover {
     }
 }
 
-
+/*---------------*/
 /* PROJECTS PAGE */
+/*---------------*/
 
 #tab-header {
     display: flex;
@@ -331,14 +333,18 @@ form > label:hover {
     border-radius: .5em .5em 0 0;
     transition: 0ms;
 }
+#tab-header li:hover {
+    background-color: var(--clr-neutral-accent);
+    transition: 500ms;
+}
 #tab-header li a {
     text-decoration: none;
     color: white;
-    transition: 0ms;
 }
 
 #tab-body {
     padding: 1em;
+    border-radius: 1em;
     background-color: var(--clr-neutral);
     color: white;
 }
