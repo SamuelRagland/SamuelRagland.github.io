@@ -411,7 +411,7 @@ form > label:hover {
 }
 #sliderBox, #sliderTwoBox, #sliderThreeBox {
     position: absolute;
-    top: 20%;
+    top: 8em;
     left: 1em;
     width: min-content;
 }
