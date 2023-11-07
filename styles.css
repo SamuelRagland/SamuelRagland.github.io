@@ -395,3 +395,31 @@ form > label:hover {
     background-color: var(--clr-neutral-light);
     box-shadow: 0rem 0rem 0rem 0rem var(--clr-neutral);
 }
+
+/* TREE FRACTAL PAGE */
+
+
+#drawPad {
+    background-color: white;
+}
+
+#slider, #sliderTwo, #sliderThree {
+    width: 10em;
+}
+#sliderBox, #sliderTwoBox, #sliderThreeBox {
+    position: absolute;
+    top: 1em;
+    left: 1em;
+    width: min-content;
+}
+
+#sliderBox > label {
+    position: relative;
+}
+#sliderTwoBox {
+    left: 12em;
+}
+
+#sliderThreeBox {
+    left: 23em;
+}

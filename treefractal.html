@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tree Fractal</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="sliderBox">
+        <label for="slider">Max Size</label>
+        <input id="slider" type="range" min="3" max="20">
+    </div>
+
+    <div id="sliderTwoBox">
+        <label for="sliderTwo">Angle</label>
+        <input id="sliderTwo" type="range" min="0" max="90">
+    </div>
+
+    <div id="sliderThreeBox">
+        <label for="sliderThree">Shrink</label>
+        <input id="sliderThree" type="range" min=".5" max=".8" step=".025">
+    </div>
+
+    <canvas id="drawPad"></canvas>
+    <script src="treefractal.js"></script>
+</body>
+</html>
