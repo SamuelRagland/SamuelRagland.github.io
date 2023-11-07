@@ -402,8 +402,9 @@ form > label:hover {
 #drawPad {
     background-color: white;
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 0px;
+    left: 0px;
+    z-index: -1;
 }
 
 #slider, #sliderTwo, #sliderThree {
