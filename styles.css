@@ -437,4 +437,32 @@ form > label:hover {
     padding: 1em;
     text-align: center;
     margin-top: 2em;
+    gap: 1em;
+    width: 100%;
+}
+
+#contact-form > input, #contact-form > textarea {
+    width: 100%;
+    padding: 1em;
+    border-radius: .5em;
+    border: none;
+    background-color: var(--clr-neutral-light);
+    box-shadow: .25rem .25rem 0rem 0rem var(--clr-neutral);
+    color: var(--clr-font);
+}
+
+#contact-form > input:focus, #contact-form > textarea:focus {
+    outline: none;
+    background-color: var(--clr-neutral-accent);
+    box-shadow: 0rem 0rem 0rem 0rem var(--clr-neutral);
+}
+
+#contact-from > input {
+    margin-block-end: 1em;
+}
+
+#contact-form label {
+    background-color: none;
+    color: var(--clr-font);
+    box-shadow: none;
 }
