@@ -1,16 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Quicksand:wght@300;400;500;600;700&display=swap');
 
 :root {
-    --clr-primary: #3FB3E0;
-    --clr-font: #4699FC;
-    --clr-neutral: #3FE0B6;
-    --clr-neutral-accent: #46FC98;
-    --clr-neutral-light: #52F5F7;
+    --clr-primary: #007172;
+    --clr-font: #025259;
+    --clr-neutral: #D94F04;
+    --clr-neutral-accent: #F29325;
+    --clr-neutral-light: #F4E2DE;
     --rotation: 0deg;
-    --background1: #5b7763;
-    --background2: #C46E6E;
-    --background1-light: #5b776382;
-    --background2-light: #c46e6e84;
 }
 
 * {
@@ -38,14 +34,14 @@ button {
 }
 
 button:hover {
-    background-color: var(--clr-neutral-light);
+    background-color: var(--clr-neutral);
     box-shadow: .25rem .25rem 0rem 0rem var(--clr-neutral);
 }
 
 #wrapper {
     /* background-color: var(--clr-primary); */
-    background-image: linear-gradient(var(--background2-light) 10dvw, var(--background1-light) 10dvw, var(--background1-light) 20dvw, var(--background2-light) 20dvw, var(--background2-light) 30dvw, var(--background1-light) 30dvw, var(--background1-light) 40dvw, var(--background2-light) 40dvw, var(--background2-light) 50dvw, var(--background1-light) 50dvw, var(--background1-light) 60dvw, var(--background2-light) 60dvw, var(--background2-light) 70dvw, var(--background1-light) 70dvw, var(--background1-light) 80dvw, var(--background2-light) 80dvw, var(--background2-light) 90dvw, var(--background1-light) 90dvw, var(--background1-light) 100dvw), 
-    linear-gradient(90deg, var(--background2) 10dvw, var(--background1) 10dvw, var(--background1) 20dvw, var(--background2) 20dvw, var(--background2) 30dvw, var(--background1) 30dvw, var(--background1) 40dvw, var(--background2) 40dvw, var(--background2) 50dvw, var(--background1) 50dvw, var(--background1) 60dvw, var(--background2) 60dvw, var(--background2) 70dvw, var(--background1) 70dvw, var(--background1) 80dvw, var(--background2) 80dvw, var(--background2) 90dvw, var(--background1) 90dvw, var(--background1) 100dvw);
+    /* background-image: linear-gradient(var(--background2-light) 10dvw, var(--background1-light) 10dvw, var(--background1-light) 20dvw, var(--background2-light) 20dvw, var(--background2-light) 30dvw, var(--background1-light) 30dvw, var(--background1-light) 40dvw, var(--background2-light) 40dvw, var(--background2-light) 50dvw, var(--background1-light) 50dvw, var(--background1-light) 60dvw, var(--background2-light) 60dvw, var(--background2-light) 70dvw, var(--background1-light) 70dvw, var(--background1-light) 80dvw, var(--background2-light) 80dvw, var(--background2-light) 90dvw, var(--background1-light) 90dvw, var(--background1-light) 100dvw), 
+    linear-gradient(90deg, var(--background2) 10dvw, var(--background1) 10dvw, var(--background1) 20dvw, var(--background2) 20dvw, var(--background2) 30dvw, var(--background1) 30dvw, var(--background1) 40dvw, var(--background2) 40dvw, var(--background2) 50dvw, var(--background1) 50dvw, var(--background1) 60dvw, var(--background2) 60dvw, var(--background2) 70dvw, var(--background1) 70dvw, var(--background1) 80dvw, var(--background2) 80dvw, var(--background2) 90dvw, var(--background1) 90dvw, var(--background1) 100dvw); */
     font-family: 'Quicksand', sans-serif;
     padding-inline: 5dvw;
     min-height: 100dvh;
@@ -76,7 +72,6 @@ button:hover {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    border: 1px solid var(--clr-neutral-accent);
 }
 
 #img-slider > img {
@@ -89,7 +84,7 @@ button:hover {
 }
 
 .bg {
-    background-color: white;
+    background-color: var(--clr-neutral-light);
     box-shadow: .25rem .25rem 0rem 0rem var(--clr-neutral);
     color: var(--clr-font);
     border-radius: .5rem;
@@ -111,6 +106,7 @@ button:hover {
     padding-block: 1rem;
     margin-block-end: 2rem;
     border-radius: .5rem .5rem 0 0;
+    color: var(--clr-font);
 }
 #nametag > div > h1:last-of-type {
     font-size: 1.5rem;
@@ -203,7 +199,8 @@ form > label {
 }
 form > label:hover {
     transform: translate(.25rem, .25rem);
-    background-color: var(--clr-neutral-light);
+    background-color: var(--clr-neutral);
+    color: white;
     box-shadow: 0rem 0rem 0rem 0rem var(--clr-neutral);
 }
 
@@ -242,7 +239,8 @@ form > label:hover {
         transform: translate(.25rem, .25rem);
     }
     #nav-list > li > a:hover {
-        background-color: var(--clr-neutral-light);
+        background-color: var(--clr-neutral);
+        color: white;
         box-shadow: 0rem 0rem 0rem 0rem var(--clr-neutral);
     }
     
@@ -345,12 +343,17 @@ form > label:hover {
 #tab-body {
     padding: 1em;
     border-radius: 1em;
-    background-color: var(--clr-neutral);
+    background-color: var(--clr-neutral-accent);
     color: white;
 }
 
+#tab-body > div > p{
+    padding: 1em;
+    line-height: 1.5;
+}
+
 .current {
-    background-color: var(--clr-neutral) !important;
+    background-color: var(--clr-neutral-accent) !important;
     font-weight: bold;
 }
 

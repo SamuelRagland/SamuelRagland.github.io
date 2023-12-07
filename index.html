@@ -130,7 +130,7 @@
                 console.log(checkboxes[i]);
                 }
 
-            $('p:not(#history, #education, #hobbies)').css('font-size', '3rem');
+            // $('p:not(#history, #education, #hobbies, #hero-right)').css('font-size', '3rem');
             }
         );
 
@@ -140,7 +140,7 @@
     <div id="wrapper">
         <header>
             <a href="index.html">
-            <img src="./img/Box-S.png" alt="S Logo" id="logo">
+            <img src="./img/logo.png" alt="S Logo" id="logo">
             </a>
             <nav>
                 <ul id="nav-list">
@@ -191,18 +191,19 @@
                 </div>
                 <div id="hero-right" class="bg">
                             <h1>Cool Images</h1>
-                        <div id="img-slider" class="bg">
+                            <p>This is an image slider I made using jQuery. The transition between images can be changed and other additions are possible as well.</p>
+                        <div id="img-slider">
                             <button id="slider-left">&#129092</button>
                             <img id="slider-one" src="./img/Gold.png" alt="Gold Logo">
-                            <img id="slider-two" src="./img/HeadShot.png" alt="Sam Ragland">
+                            <img id="slider-two" src="./img/Box-S.png" alt="Cool Pixel Art S">
                             <img id="slider-three" src="./img/hero-bg.png" alt="Cool Art">
                             <button id="slider-right">&#129094</button>
                         </div>
                 </div>
             </div>
             <div class="content">
-                <p id="history">I am a Kansas City Native and have only lived in another city for roughly two years of my life. I got into coding through an engineering class that had a lesson where you would work on coding solutions on a python-esque language.</p>
-                <p id="education">I graduated from Shawnee Mission East in 2018 with a Presidential Scholars Award. From there I went into engineering at Missouri State University and spent a year and a half there before realising I enjoyed coding. After talking to friends about their fields in coding I decided to pursue a degree in Web Development from JCCC. This is my final semester there before I will receive my AAS in Web Development and Digital Media</p>
+                <p id="history">I am a Kansas City Native and have only lived in another city for roughly two years of my life. I got into coding through an engineering class that had a lesson where I worked on coding solutions with a python-based language.</p>
+                <p id="education">I graduated from Shawnee Mission East in 2018 with a Presidential Scholars Award. From there I went into engineering at Missouri State University and spent a year and a half there before realising I enjoyed coding. After talking to friends about their fields in coding I decided to pursue a degree in Web Development from JCCC. Upon graduating in December of 2023 I achieved my AAS in Web Development and Digital Media</p>
                 <p id="hobbies">When I'm not coding I like to be active and creative. The main outlets I partake in for this expression would be in the form of soccer and art. Soccer has been my favorite sport ever since I can remember and I stay involved by playing in pick-up leagues or just practicing. Origami is an ancient style of art that I love to relax with because of how calming and satisfying the process is. Graphic design also tends to eat up a fair amount of my free time, this is because of the immense level of detail that I can develop in a work.</p>
             </div>
             <div class="socials">
@@ -212,9 +213,6 @@
             </div>
             
         </main>
-        <footer>
-            <h2>Cheese</h2>
-        </footer>
     </div>
 </body>
 </html>
