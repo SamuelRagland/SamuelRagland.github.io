@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $message = isset($_POST['message']) ? strip_tags(trim($_POST['message'])) : '';
 
     // Validate form fields
-    if (empty($lname) && empty($f) {
+    if (empty($lname) && empty($f)) {
         $errors[] = 'Name is empty';
     }
 
