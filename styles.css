@@ -724,3 +724,16 @@ body {
 }
 
 /*fix*/
+
+@media screen and (max-width: 600px) {
+    button {
+        font-size: 2rem;
+    }
+    #message {
+        width: 80vw;
+    }
+    #submitmessage {
+        width: 20vw;
+    }
+    
+}
