@@ -612,8 +612,8 @@ body {
     font-family: 'Quicksand', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/*fix*/
-@media (max-width: 600px) {
+
+@media screen and (max-width: 600px) {
     button {
         font-size: 2rem !important;
     }
@@ -798,4 +798,6 @@ body {
         align-items: center;
         justify-content: center;
     }
+
+    
 }
