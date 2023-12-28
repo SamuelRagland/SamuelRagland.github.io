@@ -2,10 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="./jquery-ui-1.13.2/jquery-ui.css">
     <link rel="icon" type="image/x-icon" href="./img/logo.png">
+    <script src="https://kit.fontawesome.com/9e5dfa3a9b.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="./jquery-ui-1.13.2/jquery-ui.js"></script>
     <script type="text/javascript">
@@ -118,11 +120,12 @@
             let checkSelected = e => {
                 let id = e.target.id.slice(0,-5);
                 if ($('#'+e.target.id).is(':checked')) {
-                    $('#'+id).show();
+                    $('#'+id).hide();
+                    console.log(e.target);
                 }
                 else
                 {
-                    $('#'+id).hide();
+                    $('#'+id).show();
                 }
             }
 
@@ -186,20 +189,26 @@
                         <h1>Cool Images</h1>
                         <p>This is an image slider I made using jQuery. The transition between images can be changed and other additions are possible as well.</p>
                     <div id="slider-box">
-                        <button id="slider-left">&#129092</button>
+                        <button id="slider-left"><i class="fa-solid fa-arrow-left"></i></button>
                         <img id="slider-one" src="./img/Gold.png" alt="Gold Logo">
                         <img id="slider-two" src="./img/Box-S.png" alt="Cool Pixel Art S">
                         <img id="slider-three" src="./img/hero-bg.png" alt="Cool Art">
-                        <button id="slider-right">&#129094</button>
+                        <button id="slider-right"><i class="fa-solid fa-arrow-right"></i></button>
                     </div>
                 </div>
-                    <form>
-                        <label for="historyCheck">History</label>
-                        <input type="checkbox" name="history" id="historyCheck" checked>
-                        <label for="educationCheck">Education</label>
-                        <input type="checkbox" name="education" id="educationCheck" checked>
-                        <label for="hobbiesCheck">Hobbies</label>
-                        <input type="checkbox" name="hobbies" id="hobbiesCheck" checked>
+                    <form id="content-buttons">
+                        <div class="holder">
+                            <label for="historyCheck">History</label>
+                            <input type="checkbox" name="history" id="historyCheck">
+                        </div>
+                        <div class="holder">
+                            <label for="educationCheck">Education</label>
+                            <input type="checkbox" name="education" id="educationCheck">
+                        </div>
+                        <div class="holder">
+                            <label for="hobbiesCheck">Hobbies</label>
+                            <input type="checkbox" name="hobbies" id="hobbiesCheck">
+                        </div>
                     </form>
                 <!-- </div> -->
                 <!-- <div id="hero-right" class="bg"> -->
