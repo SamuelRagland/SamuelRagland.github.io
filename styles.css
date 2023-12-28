@@ -56,10 +56,20 @@ button:hover {
 }
 
 #hero {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    /* grid-template:   
+    [row1-start] "name slider" auto [row1-end]
+    [row2-start] "selector slider" auto [row2-end]
+                    / 1fr 1fr; */
 }
 
-#hero-left > form {
+#hero > form {
+    grid-area: selector;
+}
+
+/* #hero-left > form {
     padding-block-start: 2em;
 }
 
@@ -71,18 +81,33 @@ button:hover {
     padding: 1em 2em;
     text-align: center;
     margin-top: 2em;
-}
+} */
 
 #img-slider {
-    width: 100%;
+    grid-area: slider;
+    /* width: 100%;
     padding: .5em;
     height: 10em;
     display: flex;
     justify-content: space-around;
+    align-items: center; */
+    display: flex;
+    flex-direction: column;
     align-items: center;
+    justify-content: space-between;
+    padding: 1em 2em;
+    text-align: center;
 }
 
-#img-slider > img {
+#slider-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 10em;
+}
+
+#img-slider img {
     width: 10em;
     padding-inline: 1em;
 }
@@ -99,6 +124,7 @@ button:hover {
 }
 
 #nametag {
+    grid-area: name;
     padding: 0rem 3rem 2rem;
     text-align: center;
     min-width: 25rem;
@@ -665,9 +691,6 @@ body {
         right: 1em;
         cursor: pointer;
     }
-}
-
-@media (max-width: 600px) {
     button {
         font-size: 2rem !important;
     }
@@ -679,7 +702,7 @@ body {
     }
 }
 
-@media (min-width: 600px) {
+@media screen and (min-width: 600px) {
     #wrapper {
         padding-inline: 10dvw;
     }
@@ -738,7 +761,7 @@ body {
     }
 }
 
-@media (min-width: 750px) {
+@media screen and (min-width: 750px) {
     #wrapper {
         padding-inline:10dvw calc(10dvw - 10px);
     }
@@ -764,13 +787,16 @@ body {
     }
 }
 
-@media (min-width: 1000px){
+@media screen and (min-width: 1000px){
     #nametag, form {
         width: 30dvw;
     }
     #hero {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template:   
+        [row1-start] "name slider" auto [row1-end]
+        [row2-start] "selector slider" auto [row2-end]
+                        / 1fr 1fr;
         gap: 2em;
     }
     #hero-right {

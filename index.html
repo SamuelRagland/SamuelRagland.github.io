@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=1920, initial-scale=1.0">
     <title>Portfolio</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="./jquery-ui-1.13.2/jquery-ui.css">
@@ -154,7 +155,7 @@
         </header>
         <main>
             <div id="hero">
-                <div id="hero-left">
+                <!-- <div id="hero-left"> -->
                     <div id="nametag" class="bg">
                         <div id="name">
                             <h1>Hello</h1>
@@ -182,6 +183,17 @@
                         <path d='M 25 91 V 50 50' stroke-linecap='round' stroke='var(--clr-neutral-accent)' stroke-width="3" fill="var(--clr-font)"/>
                         </svg>
                     </div>
+                    <div id="img-slider" class="bg">
+                        <h1>Cool Images</h1>
+                        <p>This is an image slider I made using jQuery. The transition between images can be changed and other additions are possible as well.</p>
+                    <div id="slider-box">
+                        <button id="slider-left">&#129092</button>
+                        <img id="slider-one" src="./img/Gold.png" alt="Gold Logo">
+                        <img id="slider-two" src="./img/Box-S.png" alt="Cool Pixel Art S">
+                        <img id="slider-three" src="./img/hero-bg.png" alt="Cool Art">
+                        <button id="slider-right">&#129094</button>
+                    </div>
+                </div>
                     <form>
                         <label for="historyCheck">History</label>
                         <input type="checkbox" name="history" id="historyCheck" checked>
@@ -190,18 +202,9 @@
                         <label for="hobbiesCheck">Hobbies</label>
                         <input type="checkbox" name="hobbies" id="hobbiesCheck" checked>
                     </form>
-                </div>
-                <div id="hero-right" class="bg">
-                            <h1>Cool Images</h1>
-                            <p>This is an image slider I made using jQuery. The transition between images can be changed and other additions are possible as well.</p>
-                        <div id="img-slider">
-                            <button id="slider-left">&#129092</button>
-                            <img id="slider-one" src="./img/Gold.png" alt="Gold Logo">
-                            <img id="slider-two" src="./img/Box-S.png" alt="Cool Pixel Art S">
-                            <img id="slider-three" src="./img/hero-bg.png" alt="Cool Art">
-                            <button id="slider-right">&#129094</button>
-                        </div>
-                </div>
+                <!-- </div> -->
+                <!-- <div id="hero-right" class="bg"> -->
+                <!-- </div> -->
             </div>
             <div class="content">
                 <p id="history">I am a Kansas City Native and have only lived in another city for roughly two years of my life. I got into coding through an engineering class that had a lesson where I worked on coding solutions with a python-based language.</p>
