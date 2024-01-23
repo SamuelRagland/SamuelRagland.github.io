@@ -12,7 +12,6 @@ open.addEventListener('click', () => {
 
 const host = document.querySelector( 'spline-viewer' );
 
-const sheet = new CSSStyleSheet;
 host.shadowRoot.lastChild.style.display = 'flex';
 host.shadowRoot.lastChild.style.flexDirection = 'column';
 host.shadowRoot.lastChild.style.justifyContent = 'center';
