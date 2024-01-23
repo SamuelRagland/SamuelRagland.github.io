@@ -33,7 +33,7 @@ img {
 
 .parallax > * {
     grid-area: stack;
-    animation: parallax linear;
+    animation: parallax linear forwards;
     animation-timeline: scroll();
     animation-range: 25% 75%;
 }
