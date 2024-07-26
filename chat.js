@@ -68,13 +68,12 @@ $("submitpass").addEventListener("click", function () {
             // ...
           })
           .catch((error) => {
-            var errorCode = error.code;
-            var errorMessage = error.message;
+            errorCode = error.code;
+            errorMessage = error.message;
             // ..
           });
-      }
-      if (errorCode === "auth/wrong-password") {
-        alert("wrong password");
+      } else if (errorCode === "auth/wrong-password") {
+        alert("wrong password, try again");
       }
       console.log(errorMessage, errorCode);
     });
