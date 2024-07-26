@@ -20,6 +20,24 @@ body {
     min-height: 100dvh;
 }
 
+footer {
+    font-family: 'Quicksand', sans-serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--clr-primary);
+    color: white;
+    padding-inline: var(--wrapper_pad);
+    font-size: 1rem;
+    padding-block: 2rem;
+    margin-top: 2rem;
+}
+
+footer a {
+    color: var(--clr-neutral-accent);
+    text-decoration: none;
+}
+
 #logo {
     aspect-ratio: 1/1;
     width: 5rem;
@@ -42,8 +60,17 @@ button:hover {
     box-shadow: .25rem .25rem 0rem 0rem var(--clr-neutral);
 }
 
+spline-viewer {
+    border: 5px solid var(--clr-neutral-accent);
+    border-radius: .5rem;
+}
+
 #open-nav {
     display: none;
+}
+
+:root {
+    --wrapper_pad: 5dvw;
 }
 
 #wrapper {
@@ -51,8 +78,12 @@ button:hover {
     /* background-image: linear-gradient(var(--background2-light) 10dvw, var(--background1-light) 10dvw, var(--background1-light) 20dvw, var(--background2-light) 20dvw, var(--background2-light) 30dvw, var(--background1-light) 30dvw, var(--background1-light) 40dvw, var(--background2-light) 40dvw, var(--background2-light) 50dvw, var(--background1-light) 50dvw, var(--background1-light) 60dvw, var(--background2-light) 60dvw, var(--background2-light) 70dvw, var(--background1-light) 70dvw, var(--background1-light) 80dvw, var(--background2-light) 80dvw, var(--background2-light) 90dvw, var(--background1-light) 90dvw, var(--background1-light) 100dvw), 
     linear-gradient(90deg, var(--background2) 10dvw, var(--background1) 10dvw, var(--background1) 20dvw, var(--background2) 20dvw, var(--background2) 30dvw, var(--background1) 30dvw, var(--background1) 40dvw, var(--background2) 40dvw, var(--background2) 50dvw, var(--background1) 50dvw, var(--background1) 60dvw, var(--background2) 60dvw, var(--background2) 70dvw, var(--background1) 70dvw, var(--background1) 80dvw, var(--background2) 80dvw, var(--background2) 90dvw, var(--background1) 90dvw, var(--background1) 100dvw); */
     font-family: 'Quicksand', sans-serif;
-    padding-inline: 5dvw;
+    padding-inline: var(--wrapper_pad);
     min-height: 100dvh;
+}
+
+#projects {
+    margin-block: 2em;
 }
 
 #hero {
@@ -137,20 +168,21 @@ button:hover {
     border-radius: .5rem;
 }
 
-#linked-in > a {
+/* #linked-in > a {
     font-size: 1.5rem;
     border-radius: .5rem;
     padding: 1rem;
     background-color: var(--clr-font);
     box-shadow: .25rem .25rem 0rem 0rem var(--clr-neutral);
     color: white;
-}
+} */
 
 .socials {
     display: flex;
     gap: 1rem;
     align-items: center;
     padding-bottom: 1rem;
+    margin-bottom: 1rem;
 }
 
 #nametag {
@@ -173,7 +205,7 @@ button:hover {
     border-radius: .5rem .5rem 0 0;
     color: var(--clr-font);
 }
-#nametag > div > h1:last-of-type {
+#nametag > div > h2:last-of-type {
     font-size: 1.5rem;
 }
 #nametag > svg {
@@ -685,7 +717,7 @@ body {
     background-color: var(--clr-neutral-accent);
     box-shadow: 0rem 0rem 0rem 0rem var(--clr-neutral);
 }
-.signup > h1 {
+.signup > h2 {
     font-size: 2rem;
     font-weight: 700;
     color: var(--clr-font);
@@ -694,11 +726,14 @@ body {
 
 
 @media screen and (min-width: 601px) {
+    :root {
+        --wrapper_pad: 10dvw;
+    }
     #wrapper {
-        padding-inline: 10dvw;
+        padding-inline: var(--wrapper_pad);
     }
     main > * {
-        padding-block: 2rem;
+        padding-block-start: 2rem;
     }
     header {
         width: 100%;
@@ -716,7 +751,7 @@ body {
         display: flex;
         flex-direction: row;
         gap: 1em;
-        justify-content: space-around;
+        justify-content: end;
         width: fit-content;
         align-items: center;
         margin: 0;
@@ -744,8 +779,11 @@ body {
     #tab-header > li {
         font-size: 1.5rem;
     }
+    :root {
+        --wrapper_pad: 10dvw calc(10dvw - 10px);
+    }
     #wrapper {
-        padding-inline:10dvw calc(10dvw - 10px);
+        padding-inline: var(--wrapper_pad);
     }
     #nav-list {
         translate: -.25rem -50%;
@@ -787,8 +825,11 @@ body {
 }
 
 @media screen and (min-width: 1200px) {
+    :root {
+        --wrapper_pad: 20dvw calc(20dvw - 10px);
+    }
     #wrapper {
-        padding-inline:20dvw calc(20dvw - 10px);
+        padding-inline: var(--wrapper_pad);
     }
 }
 
