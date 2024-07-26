@@ -629,7 +629,7 @@ body {
     position: absolute; 
   }
 
-  /*----------------*/
+/*----------------*/
     /* CHAT APP */
 /*----------------*/
 .hidden {
@@ -639,12 +639,7 @@ body {
     display: flex;
     align-items: center;
     line-height: 2;
-    background-image: linear-gradient(
-        #e1fafa,
-        #dbfefe,
-        #cefbfb
-    );
-    background-color: #dbffe5;
+    background-color: #e9faee;
 }
 
 #chat-controls {
