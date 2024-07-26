@@ -73,6 +73,9 @@ $("submitpass").addEventListener("click", function () {
             // ..
           });
       }
+      if (errorCode === "auth/wrong-password") {
+        alert("wrong password");
+      }
       console.log(errorMessage, errorCode);
     });
 });
@@ -113,7 +116,7 @@ dbRef
   .onSnapshot((snap) => {
     const html = snap.docs
       .map((message) => {
-        return `<div class='flex'><h3>${message.data().name}</h3>:<p>${
+        return `<div class='flex'><h3>${message.data().name}</h3>: <p>${
           message.data().message
         }</p></div>`;
       })
