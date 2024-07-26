@@ -72,8 +72,12 @@ $("submitpass").addEventListener("click", function () {
             errorMessage = error.message;
             // ..
           });
-      } else if (errorCode === "auth/wrong-password") {
+      }
+      if (errorCode === "auth/wrong-password") {
         alert("wrong password, try again");
+      }
+      if (errorCode === "auth/too-many-requests") {
+        alert("too many attempts, try again later");
       }
       console.log(errorMessage, errorCode);
     });
