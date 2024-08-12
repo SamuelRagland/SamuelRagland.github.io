@@ -28,16 +28,17 @@
       })
     </script>
     <script type="text/javascript">
-
-            function letterRotate() {
-                for (let x=0;x<3;x++) {
-                let rotation = Math.floor(Math.random() * 80 - 40);
-                let letter = document.querySelectorAll('svg');
-                letter[x].style.setProperty("--rotation", rotation + 'deg')
-                }
+        // NAME TAG
+        function letterRotate() {
+            for (let x=0;x<3;x++) {
+            let rotation = Math.floor(Math.random() * 80 - 40);
+            let letter = document.querySelectorAll('svg');
+            letter[x].style.setProperty("--rotation", rotation + 'deg')
             }
+        }
 
         $("document").ready(function() {
+            letterRotate();
 
             //IMG SLIDER
             $('#slider-one').hide()
@@ -109,47 +110,97 @@
             $('#nametag').resizable()
             $('#nametag').css('transition', '0s')
 
-            $("#linkedIn-show").animate({
-                opacity: 'hide'
-                }, '0');
+            // $("#linkedIn-show").animate({
+            //     opacity: 'hide'
+            //     }, '0');
 
-            $("#linkedIn-hide").click(function() {
-                $('#linkedIn-show').css('display', 'block');
-                $(this).css('display', 'none');
+            // $("#linkedIn-hide").click(function() {
+            //     $('#linkedIn-show').css('display', 'block');
+            //     $(this).css('display', 'none');
                 
-                $('#linked-in>a').animate({ 
-                fontSize: '0px',
-                padding: '0px',
-                }, '2000');
-            });
-            $("#linkedIn-show").click(function() {
-                $(this).css('display', 'none');
-                $('#linkedIn-hide').css('display', 'block');
-                $('#linked-in>a').animate({ 
-                padding: '1rem',
-                fontSize: '1.5rem'
-                }, '2000');
-            });
+            //     $('#linked-in>a').animate({ 
+            //     fontSize: '0px',
+            //     padding: '0px',
+            //     }, '2000');
+            // });
+            // $("#linkedIn-show").click(function() {
+            //     $(this).css('display', 'none');
+            //     $('#linkedIn-hide').css('display', 'block');
+            //     $('#linked-in>a').animate({ 
+            //     padding: '1rem',
+            //     fontSize: '1.5rem'
+            //     }, '2000');
+            // });
 
+            // ABOUT ME SECTION
+            // let checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            // let checkSelected = e => {
+            //     // Cuts off the last 5 characters of the id to get the id of the paragraph
+            //     let id = e.target.id.slice(0,-5);
+            //     if ($('#'+e.target.id).is(':checked')) {
+            //         $('#'+id).hide();
+            //         console.log(e.target);
+            //     }
+            //     else
+            //     {
+            //         $('#'+id).show();
+            //     }
+            // }
 
-            letterRotate();
+            // for (i=0; i<checkboxes.length; i++) {
+            //     $(checkboxes[i]).on("change", checkSelected);
+            //     console.log(checkboxes[i]);
+            //     }
+
             let checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            let paragraphs = document.querySelectorAll('p');
+
             let checkSelected = e => {
-                let id = e.target.id.slice(0,-5);
-                if ($('#'+e.target.id).is(':checked')) {
-                    $('#'+id).hide();
-                    console.log(e.target);
+                // Cuts off the last 5 characters of the id to get the id of the paragraph
+                let id = e.target.id.slice(0, -5);
+                let paragraph = document.getElementById(id);
+
+                if ($('#' + e.target.id).is(':checked')) {
+                    $('#' + id).hide();
+                } else {
+                    $('#' + id).show();
                 }
-                else
-                {
-                    $('#'+id).show();
-                }
+
+                updateBorderRadius();
             }
 
-            for (i=0; i<checkboxes.length; i++) {
+            let updateBorderRadius = () => {
+                let paragraphs = [];
+                checkboxes.forEach((p, index) => {
+                    let current = p.id.slice(0, -5);
+                    let paragraph = document.getElementById(current);
+                    if (paragraph.style.display !== 'none') {
+                        paragraphs.push(paragraph);
+                        console.log(paragraphs);
+                        }
+                    // console.log(paragraph);
+                });
+                paragraphs.forEach((p, index) => {
+                    p.style.borderRadius = '0'; // Reset border-radius
+                    if (paragraphs.length === 1) {
+                        p.style.borderRadius = '.5rem';
+                    }
+                    else if (index === 0) {
+                        p.style.borderTopLeftRadius = '.5rem';
+                        p.style.borderTopRightRadius = '.5rem';
+                    } else if (index === paragraphs.length - 1) {
+                        p.style.borderBottomLeftRadius = '.5rem';
+                        p.style.borderBottomRightRadius = '.5rem';
+                    }
+                });
+            }
+
+            for (let i = 0; i < checkboxes.length; i++) {
                 $(checkboxes[i]).on("change", checkSelected);
-                console.log(checkboxes[i]);
-                }
+            }
+
+            // Initial call to set border-radius on page load
+            updateBorderRadius();
 
             // $('p:not(#history, #education, #hobbies, #hero-right)').css('font-size', '3rem');
             }
@@ -233,8 +284,8 @@
             </div>
             <div class="content">
                 <p id="history">I am a Kansas City Native and have only lived in another city for roughly two years of my life. I got into coding through an engineering class that had a lesson where I worked on coding solutions with a python-based language.</p>
-                <p id="education">I graduated from Shawnee Mission East in 2018 with a Presidential Scholars Award. From there I went into engineering at Missouri State University and spent a year and a half there before realising I enjoyed coding. After talking to friends about their fields in coding I decided to pursue a degree in Web Development from JCCC. Upon graduating in December of 2023 I achieved my AAS in Web Development and Digital Media</p>
-                <p id="hobbies">When I'm not coding I like to be active and creative. The main outlets I partake in for this expression would be in the form of soccer and art. Soccer has been my favorite sport ever since I can remember and I stay involved by playing in pick-up leagues or just practicing. Origami is an ancient style of art that I love to relax with because of how calming and satisfying the process is. Graphic design also tends to eat up a fair amount of my free time, this is because of the immense level of detail that I can develop in a work.</p>
+                <p id="education">I graduated from Shawnee Mission East in 2018 with a Presidential Scholars Award. From there I went into engineering at Missouri State University and spent a year and a half there before realising I enjoyed coding. After talking to friends about their fields in coding I decided to pursue a degree in Web Development from JCCC. Upon graduating in December of 2023 I achieved my AAS in Web Development and Digital Media.</p>
+                <p id="hobbies">When I'm not coding I like to be active and creative. The main outlets I partake in for this expression would be in the form of soccer and art. Soccer has been my favorite sport ever since I can remember and I stay involved by playing in pick-up leagues or just practicing. Origami is an ancient style of art that I love to relax with because of how calming and satisfying the process is. Graphic design also tends to eat up a fair amount of my free time due to how often I get carried away with the details.</p>
             </div>
             <!-- <h2>My Spline Design</h2>
             <spline-viewer url="https://prod.spline.design/cRKoFgPFshTTwQNR/scene.splinecode"></spline-viewer> -->
@@ -246,9 +297,14 @@
         </main>
         <div id="projects">
             <ul id="tab-header">
-              <li class="current"><a href="#js">Javascript</a></li>
-              <li><a href='#wordpress'>WordPress</a></li>
-              <li><a href="#threeD-css">CSS</a></li>
+              <li class="current">
+                <a href="#js">Javascript</a>
+              </li>
+              <li>
+                <a href='#wordpress'>WordPress</a></li>
+              <li>
+                <a href="#threeD-css">CSS</a>
+              </li>
             </ul>
             <div id="tab-body">
               <div id="js">
@@ -288,8 +344,15 @@
         </div>
     </div>
         <footer>
-            <p>&copy; 2022 Samuel Ragland</p>
-            <h3 id="linked-in"><a href="https://www.linkedin.com/in/samuelragland/">My LinkedIn Page</a></h3>
+            <div id="copyright">
+                <p>&copy; 2022 Samuel Ragland</p>
+                <img src="./img/logo.png" alt="" width="40" height="40">
+            </div>
+            <div>
+                <h3><a href="/contact.html">Contact Me</a></h3>
+                <h3 id="linked-in"><a href="https://www.linkedin.com/in/samuelragland/">LinkedIn Page</a></h3>
+                <h3><a href="https://github.com/SamuelRagland">GitHub Page</a></h3>
+            </div>
         </footer>
 
     <script src="script.js" type="text/javascript" defer></script>

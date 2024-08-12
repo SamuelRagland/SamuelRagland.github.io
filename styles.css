@@ -31,11 +31,20 @@ footer {
     font-size: 1rem;
     padding-block: 2rem;
     margin-top: 2rem;
+    align-items: stretch;
 }
-
 footer a {
     color: var(--clr-neutral-accent);
     text-decoration: none;
+}
+/* footer h3 {
+    margin-block: 1rem;
+} */
+footer > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1rem;
 }
 
 #logo {
@@ -258,6 +267,9 @@ p {
 }
 .content > p:last-of-type {
     border-radius: 0 0 .5rem .5rem;
+}
+.content > p:only-child {
+    border-radius: .5rem;
 }
 /* .content > p:hover {
     border-radius: .5rem;
@@ -917,6 +929,9 @@ body {
         width: 100%;
         border-radius: 0;
         box-shadow: 0 0 0 0 var(--clr-neutral);
+    }
+    #hobbies, #education {
+        margin-top: -1px;
     }
 }
 /* @media screen and (max-width: 480px) {
